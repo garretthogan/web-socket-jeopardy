@@ -9,12 +9,6 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      const newItem = (content) => {
-        const item = document.createElement('li');
-        item.innerText = content;
-        return item;
-      };
-
       const socket = io();
 
       socket.on('connect', () => {

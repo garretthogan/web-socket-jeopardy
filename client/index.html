@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Socket Jeopardy</title>
+  </head>
+  <body>
+    <button onclick="createRoom()">Create room</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const newItem = (content) => {
+        const item = document.createElement('li');
+        item.innerText = content;
+        return item;
+      };
+
+      const socket = io();
+
+      socket.on('connect', () => {
+        console.log('Connected');
+      });
+
+      socket.on('room_created', () => {
+        console.log('Room created');
+      });
+
+      function createRoom() {
+        console.log('Creating a room');
+        const roomName = 'My Room Name';
+        socket.emit('create_room', roomName);
+      }
+    </script>
+  </body>
+</html>

@@ -3,27 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Web Socket Jeopardy</title>
+    <link rel="stylesheet" href="/bundle.css" />
   </head>
   <body>
-    <button onclick="createRoom()">Create room</button>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
-
-      socket.on('connect', () => {
-        console.log('Connected');
-      });
-
-      socket.on('room_created', () => {
-        console.log('Room created');
-      });
-
-      function createRoom() {
-        console.log('Creating a room');
-        const roomName = 'My Room Name';
-        socket.emit('create_room', roomName);
-      }
-    </script>
+    <div class="controls">
+      <div class="room-info">
+        <span class="room-name">Room Name</span>
+      </div>
+      <button class="create-room-button">Create room</button>
+    </div>
+    <script type="module" src="/bundle.js"></script>
   </body>
 </html>

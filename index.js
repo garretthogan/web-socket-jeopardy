@@ -1,10 +1,13 @@
-const content = require('fs').readFileSync(__dirname + '/client' + '/index.html', 'utf8');
+const static = require('node-static');
+
+const file = new static.Server('./client');
 
 const httpServer = require('http').createServer((req, res) => {
-  // serve the index.html file
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Content-Length', Buffer.byteLength(content));
-  res.end(content);
+  req
+    .addListener('end', () => {
+      file.serve(req, res);
+    })
+    .resume();
 });
 
 const io = require('socket.io')(httpServer);

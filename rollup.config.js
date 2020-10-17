@@ -14,7 +14,7 @@ export default {
       format: 'es',
     },
     {
-      file: 'bundle.min.js',
+      file: 'client/bundle.min.js',
       format: 'iife',
       name: 'version',
       plugins: [terser()],

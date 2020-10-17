@@ -2,7 +2,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:dev": "rollup -c --watch"
   },
   "dependencies": {
     "node-static": "^0.7.11",

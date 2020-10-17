@@ -1,2 +1,4 @@
 /node_modules/
-bundle.min.js
+/client/bundle.min.js
+/client/bundle.js
+/client/bundle.css

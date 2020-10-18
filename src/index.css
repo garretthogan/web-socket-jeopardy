@@ -12,7 +12,7 @@ body {
 }
 
 .jeopardy-board-container {
-  display: none;
+  /* display: none; */
   padding-top: 72px;
 }
 

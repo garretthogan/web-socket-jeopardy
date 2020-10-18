@@ -1,8 +1,10 @@
 import io from 'socket.io-client';
+import board from './templates/board.html';
 
 function initBoard() {
-  const board = document.querySelector('.jeopardy-board-container');
-  board.setAttribute('style', 'display: inherit;');
+  const boardContainer = document.querySelector('.jeopardy-board-container');
+  // boardContainer.setAttribute('style', 'display: inherit;');
+  boardContainer.innerHTML = board;
 
   const prices = [100, 200, 300, 400];
 

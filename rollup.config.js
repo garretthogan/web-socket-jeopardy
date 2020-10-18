@@ -4,6 +4,7 @@ import nodePolyfills from 'rollup-plugin-node-polyfills';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import scss from 'rollup-plugin-scss';
+import posthtml from 'rollup-plugin-posthtml-template';
 
 // rollup.config.js
 export default {
@@ -31,5 +32,6 @@ export default {
     commonjs(),
     nodePolyfills(),
     scss(),
+    posthtml(),
   ],
 };

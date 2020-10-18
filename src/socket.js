@@ -3,7 +3,6 @@ import board from './templates/board.html';
 
 function initBoard() {
   const boardContainer = document.querySelector('.jeopardy-board-container');
-  // boardContainer.setAttribute('style', 'display: inherit;');
   boardContainer.innerHTML = board;
 
   const prices = [100, 200, 300, 400];

@@ -1,10 +1,22 @@
 import io from 'socket.io-client';
 
-export default function () {
-  const roomInfo = { name: null };
+function initBoard() {
+  const board = document.querySelector('.jeopardy-board-container');
+  board.setAttribute('style', 'display: inherit;');
 
+  const prices = [100, 200, 300, 400];
+
+  const categories = Array.from(document.querySelectorAll('.category'));
+  categories.forEach((category) => {
+    const cards = Array.from(category.children).map((question) => question.children[0].children[0]);
+    prices.map((price, i) => (cards[i].innerText = `$${price}`));
+  });
+}
+
+export default function () {
   const createButton = document.querySelector('.create-room-button');
   const roomNameContainer = document.querySelector('.room-name');
+  const roomInfo = { name: null };
 
   const socket = io();
 
@@ -17,6 +29,7 @@ export default function () {
     console.log('Room created');
     roomNameContainer.innerText = roomInfo.name;
     createButton.remove();
+    initBoard();
   });
 
   function createRoom() {

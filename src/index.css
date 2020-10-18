@@ -7,6 +7,50 @@ body {
 }
 
 .controls {
-  padding-top: 12px;
+  padding-top: 24px;
   text-align: center;
+}
+
+.jeopardy-board-container {
+  display: none;
+  padding-top: 72px;
+}
+
+.jeopardy-board {
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 512px;
+  min-height: 256px;
+  min-width: 512px;
+}
+
+.category {
+  flex: 64px;
+  background-color: red;
+}
+
+.question-container {
+  padding: 12px;
+}
+
+.question {
+  background-color: blue;
+  min-width: 48px;
+  min-height: 48px;
+  text-align: center;
+}
+
+.price {
+  color: white;
+  padding-top: 4px;
+}
+
+.controls {
+  min-height: 24px;
+}
+
+.room-info {
+  display: inline;
 }

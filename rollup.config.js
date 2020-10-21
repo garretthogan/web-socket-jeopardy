@@ -5,6 +5,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import scss from 'rollup-plugin-scss';
 import posthtml from 'rollup-plugin-posthtml-template';
+import svelte from 'rollup-plugin-svelte';
 
 // rollup.config.js
 export default {
@@ -33,5 +34,6 @@ export default {
     nodePolyfills(),
     scss(),
     posthtml(),
+    svelte({ extensions: ['.svelte'] }),
   ],
 };
